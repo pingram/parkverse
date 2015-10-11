@@ -1,2 +1,9 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<div class="bg">
+  <%= image_tag("flickr_maserati_14798923808_a42426fc2b_k.jpg") %>
+</div>
+
+<%= form_tag("/search", method: "get") do %>
+  <%#= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q, nil, class: "form-control", placeholder: "Search for a parking spot") %>
+  <%= submit_tag("Search", class: "btn btn-submit") %>
+<% end %>
