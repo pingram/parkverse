@@ -1,0 +1,1 @@
+Rails.application.config.google_api_key = ENV["PARKVERSE_GOOGLE_API"]

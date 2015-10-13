@@ -4,10 +4,10 @@
   </div>
 
   <%= form_tag("/search", method: "get", class: "form-inline") do %>
-    <%#= label_tag(:q, "Search for:") %>
+    <%#= label_tag(:address, "Search for:") %>
     <div class="row">
       <div class="col-md-9 col-md-offset-1">
-        <%= text_field_tag(:q, nil, class: "form-control", placeholder: "Search for a parking spot") %>
+        <%= text_field_tag(:address, nil, class: "form-control", placeholder: "Search for a parking spot") %>
       </div>
       <div class="col-md-1">
         <%= submit_tag("Search", class: "btn btn-submit") %>
