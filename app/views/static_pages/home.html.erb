@@ -3,7 +3,7 @@
     <%= image_tag("flickr_maserati_14798923808_a42426fc2b_k.jpg") %>
   </div>
 
-  <%= form_tag("/search", method: "get", class: "form-inline") do %>
+  <%= form_tag(search_api_spaces_path, method: "get", class: "form-inline") do %>
     <%#= label_tag(:address, "Search for:") %>
     <div class="row">
       <div class="col-md-9 col-md-offset-1">
