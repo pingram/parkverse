@@ -1,9 +1,17 @@
-<div class="bg">
-  <%= image_tag("flickr_maserati_14798923808_a42426fc2b_k.jpg") %>
-</div>
+<div id="home">
+  <div class="bg">
+    <%= image_tag("flickr_maserati_14798923808_a42426fc2b_k.jpg") %>
+  </div>
 
-<%= form_tag("/search", method: "get") do %>
-  <%#= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:q, nil, class: "form-control", placeholder: "Search for a parking spot") %>
-  <%= submit_tag("Search", class: "btn btn-submit") %>
-<% end %>
+  <%= form_tag("/search", method: "get", class: "form-inline") do %>
+    <%#= label_tag(:q, "Search for:") %>
+    <div class="row">
+      <div class="col-md-9 col-md-offset-1">
+        <%= text_field_tag(:q, nil, class: "form-control", placeholder: "Search for a parking spot") %>
+      </div>
+      <div class="col-md-1">
+        <%= submit_tag("Search", class: "btn btn-submit") %>
+      </div>
+    </div>
+  <% end %>
+</div>

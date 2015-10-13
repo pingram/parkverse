@@ -16,11 +16,14 @@
 
 @import "static_pages";
 
-
 .navbar {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-  filter: alpha(opacity=80);
-  -moz-opacity: 0.80;
-  -khtml-opacity: 0.8;
-  opacity: 0.8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity = 80);
+    -moz-opacity: 0.80;
+    -khtml-opacity: 0.8;
+    opacity: 0.8;
+  .logo {
+    height: 40px;
+    margin-top: -10px;
+  }
 }
