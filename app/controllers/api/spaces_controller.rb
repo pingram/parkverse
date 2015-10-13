@@ -8,6 +8,18 @@ class Api::SpacesController < ApplicationController
 
     response = HTTParty.get(base_uri, options)
 
-    render json: response
+    location = response["results"].first["geometry"]["location"]
+    lat = location["lat"]
+    lng = location["lng"]
+
+    sql = <<-SQL
+      SELECT id, owner_id, ( 3959 * acos( cos( radians( #{lat} ) ) * cos( radians( lat ) ) * cos( radians( lng ) - radians( #{lng} ) ) + sin( radians( #{lat} ) ) * sin( radians( lat ) ) ) ) AS distance
+      FROM spaces
+      ORDER BY distance;
+    SQL
+
+    spaces = Space.find_by_sql(sql)
+
+    render json: spaces
   end
 end
